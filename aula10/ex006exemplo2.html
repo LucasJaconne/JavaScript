@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body {
+            background-color: rgb(50, 91, 99);
+        }
+        div#área{
+            color: aliceblue;
+            font: normal 20pt Arial;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: rgb(35, 197, 197);
+        }
+    </style>
+</head>
+<body>
+    <div id="área" >
+        interaja
+    </div>
+    <script>
+
+      //Nesse caso colocamos os eventos diretamente no JS, atribuindo casa evento para a variável (a)
+      
+      //também atribuimos a variável (a) para todos os eventos, deixando ela fora das funções
+
+      var a = document.querySelector('div#área')
+      a.addEventListener('click', clicar) //não esquecer de atribuir o evento à variável (a.addEventListener)
+      a.addEventListener('mouseenter', entrar)
+      a.addEventListener('mouseout', saiu)
+     
+
+      function clicar(){
+        a.innerHTML = '<strong>Clicou</strong>'
+        a.style.backgroundColor = 'pink'
+        a.style.color = 'black'
+      }
+      function entrar(){
+        a.innerHTML = 'Entrou!'
+        a.style.backgroundColor = 'red'
+      }
+      function saiu(){
+        a.innerHTML = 'Saiu!'
+        a.style.backgroundColor = 'rgb(35, 197, 197)'
+      } 
+    </script>
+</body>
+</html>

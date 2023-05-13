@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color:rgb(168, 212, 212);
+            font: normal 20pt Arial;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando com DOM</h1>
+    <p>aqui vai o resultado</p>
+    
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">
+        <a href=""><strong>clique em mim</strong></a> 
+    </div>
+    <div id="idade">
+        <h1>tenho 18 anos</h1>
+        
+    </div>
+    <script>
+
+        /*
+        Abaixo temos o primeiro exemplo de selecionar um elemento, usando o GetElementsByTagName, lembrando que no plural temos que colocar o [] para 
+        definir qual será o elemento selecionado
+        */
+        var p1 = document.getElementsByTagName('p')[0] //aqui estamos pegando o elementop p do HTML e selecionando o primeiro colocando o [0]
+        document.write(p1.innerText)// aqui resgatamos a variável p1 e colocamos para escrever o texto que está no primeiro parágrafo
+        p1.style.color = 'blue' //aqui formatamos para mudar a cor do p[0]
+        
+        var p2 = document.getElementsByTagName('p')[1]
+        document.write(p2.innerHTML)//o innerText pega só a frase, sem a formatação, ja o innerHTML pega a formatação completa
+
+        /*
+        Abaixo temos um exemplo de edição do body em uma variável
+        */
+        var corpo = document.body
+        corpo.style.backgroundColor = 'white'
+
+        /*
+        Abaixo temos o segundo exemplo de selecionar um elemento, usando o getElementById
+        */
+        var d = document.getElementById('msg')
+        d.innerHTML = '<strong>clique em mim</strong>' //podemos mudar o texto colocando esse cógido
+        d.style.backgroundColor = 'green'
+        
+
+        /*
+        Abaixo temos o segundo exemplo de selecionar um elemento, usando o querySelector (o mais recomendável)
+        */
+        var id = document.querySelector('div#idade')
+        id.style.backgroundColor = 'red'
+    </script>
+</body>
+</html>

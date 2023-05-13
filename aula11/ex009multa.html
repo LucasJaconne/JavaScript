@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condiçõest</title>
+    <style>
+        body{
+            background-color: rgb(116, 60, 24);
+            color:white;
+        }
+        div#Res{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h 
+    <input type="button" value="Verificar" id="verif" >
+    <div id="Res">
+        <h3>
+            Situação:
+        </h3>
+    </div>
+
+    <script>
+        var veri = document.querySelector('input#verif')
+        veri.addEventListener('click', Verificar)
+        function Verificar(){
+        var vel = document.querySelector('input#txtvel')       
+        var res = document.querySelector('div#Res')
+        var v1 = Number(vel.value)
+            if(v1 > 60){
+                res.innerHTML = `Você está acima do limite de velocidade! MULTADO`
+            } else {
+                res.innerHTML = `Você está abaixo do limite de velocidade, parabéns`
+            }
+        }
+    </script>
+
+</body>
+</html>

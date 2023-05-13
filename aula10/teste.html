@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de conhecimento</title>
+    <style>
+        body{
+            background-color: rgb(68, 33, 5);
+            color: white;
+            font: normal 17pt Arial ;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" name="num1" id="num1"> +
+    <input type="number" name="num2" id="num2">
+    <input type="button" value="somar" id="somar">
+    <div id="res">
+        <h3>
+            Resultado:
+        </h3>
+    </div>
+
+    <script>
+        var calculo = document.querySelector('input#somar')
+        calculo.addEventListener('click', somar)
+        function somar(){
+            var num1 = document.querySelector('input#num1')
+            var num2 = document.querySelector('input#num2')
+            var n1 = Number(num1.value)
+            var n2 = Number(num2.value)
+            var s = n1 + n2
+            var res = document.querySelector('div#res')
+            res.innerHTML = `<h3>Resultado: ${s}</h3>`
+        }
+
+    </script>
+</body>
+</html>
